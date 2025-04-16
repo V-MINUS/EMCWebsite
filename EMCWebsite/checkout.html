@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | Electronic Music Council</title>
+    <meta name="description" content="Secure checkout for Electronic Music Council merchandise.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/merch.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="site-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <h1>EMC</h1>
+                </a>
+            </div>
+            <nav>
+                <div class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="artists.html">Artists</a></li>
+                    <li><a href="merch.html">Merch</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Secure Checkout</h1>
+            <div class="tagline">Complete your purchase</div>
+        </div>
+    </section>
+
+    <!-- Checkout Section -->
+    <section class="checkout-section">
+        <div class="checkout-container">
+            <!-- Order Summary -->
+            <div class="checkout-summary">
+                <h2>Order Summary</h2>
+                <div id="checkout-items">
+                    <!-- Items will be dynamically inserted here -->
+                </div>
+                <div class="checkout-total">
+                    <span>Total</span>
+                    <span id="checkout-total-amount">€0.00</span>
+                </div>
+            </div>
+            
+            <!-- Checkout Form -->
+            <div class="checkout-form">
+                <h3>Shipping Information</h3>
+                <form id="payment-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="first-name">First Name</label>
+                            <input type="text" id="first-name" name="first-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="last-name">Last Name</label>
+                            <input type="text" id="last-name" name="last-name" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="address">Street Address</label>
+                        <input type="text" id="address" name="address" required>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="city">City</label>
+                            <input type="text" id="city" name="city" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="postal-code">Postal Code</label>
+                            <input type="text" id="postal-code" name="postal-code" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="country">Country</label>
+                        <select id="country" name="country" required>
+                            <option value="ireland">Ireland</option>
+                            <option value="uk">United Kingdom</option>
+                            <option value="usa">United States</option>
+                            <option value="canada">Canada</option>
+                            <option value="australia">Australia</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <h3>Payment Information</h3>
+                    <div class="form-group">
+                        <label for="card-name">Name on Card</label>
+                        <input type="text" id="card-name" name="card-name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="card-number">Card Number</label>
+                        <input type="text" id="card-number" name="card-number" placeholder="XXXX XXXX XXXX XXXX" required>
+                        <div class="payment-logos">
+                            <img src="assets/images/payment/visa.png" alt="Visa">
+                            <img src="assets/images/payment/mastercard.png" alt="Mastercard">
+                            <img src="assets/images/payment/amex.png" alt="American Express">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="expiry-date">Expiry Date</label>
+                            <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YY" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cvc">CVC</label>
+                            <input type="text" id="cvc" name="cvc" placeholder="123" required>
+                        </div>
+                    </div>
+                    
+                    <div class="secure-badge">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/>
+                        </svg>
+                        Secure SSL Encrypted Payment
+                    </div>
+                    
+                    <button type="submit" class="checkout-button">Complete Purchase</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>EMC</h2>
+                    <p>Electronic Music Council</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Navigate</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="events.html">Events</a></li>
+                            <li><a href="news.html">News</a></li>
+                            <li><a href="artists.html">Artists</a></li>
+                            <li><a href="merch.html">Merchandise</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Connect</h3>
+                        <ul class="social-links">
+                            <li><a href="#" target="_blank">Instagram</a></li>
+                            <li><a href="#" target="_blank">Facebook</a></li>
+                            <li><a href="#" target="_blank">Twitter</a></li>
+                            <li><a href="#" target="_blank">SoundCloud</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Electronic Music Council. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Parse URL parameters
+            const params = new URLSearchParams(window.location.search);
+            const item = params.get('item');
+            const price = params.get('price');
+            
+            if (item && price) {
+                // Set up product information
+                const products = {
+                    tshirt: {
+                        name: 'EMC Logo T-Shirt',
+                        image: 'assets/images/merch/tshirt.jpg',
+                        price: 25
+                    },
+                    hoodie: {
+                        name: 'EMC Waveform Hoodie',
+                        image: 'assets/images/merch/hoodie.jpg',
+                        price: 45
+                    },
+                    beanie: {
+                        name: 'EMC Embroidered Beanie',
+                        image: 'assets/images/merch/beanie.jpg',
+                        price: 18
+                    },
+                    stickers: {
+                        name: 'EMC Sticker Pack',
+                        image: 'assets/images/merch/stickers.jpg',
+                        price: 8
+                    },
+                    earplugs: {
+                        name: 'EMC High-Fidelity Earplugs',
+                        image: 'assets/images/merch/earplugs.jpg',
+                        price: 15
+                    },
+                    mug: {
+                        name: 'EMC Coffee Mug',
+                        image: 'assets/images/merch/mug.jpg',
+                        price: 12
+                    },
+                    poster: {
+                        name: 'Limited Edition Cork Scene Poster',
+                        image: 'assets/images/merch/poster.jpg',
+                        price: 20
+                    }
+                };
+                
+                // Create checkout item HTML
+                const product = products[item];
+                if (product) {
+                    const itemHTML = `
+                        <div class="checkout-item">
+                            <div class="checkout-item-image">
+                                <img src="${product.image}" alt="${product.name}">
+                            </div>
+                            <div class="checkout-item-details">
+                                <h3>${product.name}</h3>
+                                <p class="checkout-item-price">€${product.price}.00</p>
+                            </div>
+                        </div>
+                    `;
+                    
+                    document.getElementById('checkout-items').innerHTML = itemHTML;
+                    document.getElementById('checkout-total-amount').textContent = `€${product.price}.00`;
+                }
+            }
+            
+            // Handle form submission
+            document.getElementById('payment-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('This is a demo checkout. In a real implementation, this would securely process your payment.');
+                window.location.href = 'merch.html?order=completed';
+            });
+        });
+    </script>
+</body>
+</html>

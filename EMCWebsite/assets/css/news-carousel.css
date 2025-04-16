@@ -1,0 +1,203 @@
+/* 
+  Electronic Music Council - News Carousel Stylesheet
+  Styling for the News API integration carousel
+*/
+
+.news-carousel-section {
+  background-color: var(--color-background-alt);
+  padding: var(--space-xl) 0;
+}
+
+.news-carousel-container {
+  position: relative;
+  margin: var(--space-md) 0;
+  overflow: hidden;
+}
+
+.news-carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: var(--space-sm) 0;
+}
+
+.carousel-items {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-item {
+  flex: 0 0 calc(33.333% - 20px);
+  min-width: calc(33.333% - 20px);
+  margin: 0 10px;
+  background-color: rgba(22, 22, 31, 0.7);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-item-image {
+  height: 180px;
+  overflow: hidden;
+}
+
+.carousel-item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.carousel-item:hover .carousel-item-image img {
+  transform: scale(1.05);
+}
+
+.carousel-item-content {
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  height: 250px;
+}
+
+.carousel-item-date {
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+.carousel-item-title {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  line-height: 1.4;
+  font-weight: 600;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.carousel-item-description {
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-sm);
+  font-size: 0.95rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  flex-grow: 1;
+}
+
+.carousel-source {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background-color: rgba(110, 18, 232, 0.2);
+  border-radius: 20px;
+  font-size: 0.75rem;
+  margin-bottom: var(--space-sm);
+  color: var(--color-text-muted);
+}
+
+.carousel-navigation {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+.carousel-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(14, 14, 20, 0.7);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-standard);
+  pointer-events: auto;
+}
+
+.carousel-btn:hover {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: var(--space-md);
+}
+
+.carousel-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: var(--transition-standard);
+}
+
+.carousel-indicator.active {
+  background-color: var(--color-secondary);
+  transform: scale(1.2);
+}
+
+.news-loading {
+  text-align: center;
+  padding: var(--space-xl) 0;
+}
+
+.spinner {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(110, 18, 232, 0.3);
+  border-radius: 50%;
+  border-top-color: var(--color-primary);
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.news-error {
+  text-align: center;
+  padding: var(--space-xl) 0;
+  color: var(--color-text-muted);
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+  .carousel-item {
+    flex: 0 0 calc(50% - 20px);
+    min-width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-item {
+    flex: 0 0 calc(100% - 20px);
+    min-width: calc(100% - 20px);
+  }
+  
+  .carousel-btn {
+    width: 36px;
+    height: 36px;
+  }
+}

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electronic Music Council | Cork</title>
+    <meta name="description" content="A community working to generate and maintain a positive, sustainable electronic music economy in Cork.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="site-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <h1>EMC</h1>
+                </a>
+            </div>
+            <nav>
+                <div class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="artists.html">Artists</a></li>
+                    <li><a href="merch.html">Merch</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="glitch-text" data-text="Electronic Music Council">Electronic Music Council</h1>
+            <div class="tagline">Fostering Cork's electronic music culture</div>
+            <div class="hero-buttons">
+                <a href="events.html" class="btn btn-primary">Upcoming Events</a>
+                <a href="about.html" class="btn btn-secondary">Our Mission</a>
+            </div>
+        </div>
+        <div class="audio-wave-container">
+            <canvas id="audio-wave"></canvas>
+        </div>
+    </section>
+
+    <!-- Featured Event -->
+    <section class="featured-event">
+        <div class="container">
+            <div class="section-header">
+                <h2>Next Event</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="event-card">
+                <div class="event-date">
+                    <span class="day">15</span>
+                    <span class="month">APR</span>
+                </div>
+                <div class="event-info">
+                    <h3>EMC Presents: Small Crab at Liquid Lounge</h3>
+                    <p class="event-meta">
+                        <span class="location">Liquid Lounge, Cork</span>
+                        <span class="time">10:00 PM - 2:00 AM</span>
+                    </p>
+                    <p class="event-description">
+                        Join us for an unforgettable night featuring Small Crab, delivering cutting-edge electronic sounds in an intimate venue setting.
+                    </p>
+                    <a href="#" class="btn btn-tertiary">Get Tickets</a>
+                </div>
+                <div class="event-image">
+                    <img src="assets/images/event-placeholder.jpg" alt="Small Crab at Liquid Lounge">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Statement -->
+    <section class="mission">
+        <div class="container">
+            <div class="mission-content">
+                <h2>Our Mission</h2>
+                <p>The Electronic Music Council works to generate and maintain a positive, sustainable electronic music economy by facilitating opportunities for growth and development in Cork.</p>
+                <p>Through events, education, and community building, we create spaces where artists and audiences can connect.</p>
+                <a href="about.html" class="text-link">Learn more about us <span class="arrow">→</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Grid -->
+    <section class="events-grid">
+        <div class="container">
+            <div class="section-header">
+                <h2>Upcoming Events</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="grid">
+                <div class="grid-item">
+                    <div class="event-card-small">
+                        <div class="card-image">
+                            <img src="assets/images/event-placeholder.jpg" alt="Event">
+                            <div class="date-badge">
+                                <span class="day">22</span>
+                                <span class="month">APR</span>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3>EMC Presents: Collie at Liquid Lounge</h3>
+                            <p class="venue">Liquid Lounge, Cork</p>
+                            <a href="#" class="text-link">Details <span class="arrow">→</span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div class="event-card-small">
+                        <div class="card-image">
+                            <img src="assets/images/event-placeholder.jpg" alt="Event">
+                            <div class="date-badge">
+                                <span class="day">29</span>
+                                <span class="month">APR</span>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3>Illicit x Outlaw'd – Bushbaby</h3>
+                            <p class="venue">Cyprus Avenue, Cork</p>
+                            <a href="#" class="text-link">Details <span class="arrow">→</span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div class="event-card-small">
+                        <div class="card-image">
+                            <img src="assets/images/event-placeholder.jpg" alt="Event">
+                            <div class="date-badge">
+                                <span class="day">05</span>
+                                <span class="month">MAY</span>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3>EMC Presents: Behne</h3>
+                            <p class="venue">Dali, Cork</p>
+                            <a href="#" class="text-link">Details <span class="arrow">→</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="center-btn">
+                <a href="events.html" class="btn btn-primary">View All Events</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest News -->
+    <section class="latest-news">
+        <div class="container">
+            <div class="section-header">
+                <h2>Latest News</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="news-grid">
+                <article class="news-card">
+                    <div class="news-image">
+                        <img src="assets/images/news-placeholder.jpg" alt="News">
+                    </div>
+                    <div class="news-content">
+                        <span class="news-date">April 2, 2025</span>
+                        <h3>Cork-based digital artist showcases 'Techno People of Cork'</h3>
+                        <p>A digital exploration of Cork's underground techno culture featuring portraits of local scene pioneers.</p>
+                        <a href="#" class="text-link">Read More <span class="arrow">→</span></a>
+                    </div>
+                </article>
+                <article class="news-card">
+                    <div class="news-image">
+                        <img src="assets/images/news-placeholder.jpg" alt="News">
+                    </div>
+                    <div class="news-content">
+                        <span class="news-date">March 15, 2025</span>
+                        <h3>CICADA SELECTS residents forge new ground through inter-city collaboration</h3>
+                        <p>Cork's electronic music collective expands its reach through collaborative projects with Dublin and Galway artists.</p>
+                        <a href="#" class="text-link">Read More <span class="arrow">→</span></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Stay Connected</h2>
+                <p>Subscribe to our newsletter for the latest events, news, and updates from EMC.</p>
+                <form class="newsletter-form">
+                    <div class="form-group">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">EMC</div>
+                    <p>A community working to generate and maintain a positive, sustainable electronic music economy in Cork.</p>
+                    <div class="social-icons">
+                        <a href="#" target="_blank"><span class="icon-facebook"></span></a>
+                        <a href="#" target="_blank"><span class="icon-instagram"></span></a>
+                        <a href="#" target="_blank"><span class="icon-twitter"></span></a>
+                        <a href="#" target="_blank"><span class="icon-soundcloud"></span></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="artists.html">Artists</a></li>
+                        <li><a href="merch.html">Merchandise</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Upcoming Events</h3>
+                    <ul class="footer-events">
+                        <li>
+                            <span class="event-date">APR 15</span>
+                            <a href="#">Small Crab at Liquid Lounge</a>
+                        </li>
+                        <li>
+                            <span class="event-date">APR 22</span>
+                            <a href="#">Collie at Liquid Lounge</a>
+                        </li>
+                        <li>
+                            <span class="event-date">APR 29</span>
+                            <a href="#">Bushbaby at Cyprus Avenue</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <ul class="contact-info">
+                        <li><span class="icon-envelope"></span> info@electronicmusiccouncil.com</li>
+                        <li><span class="icon-map-marker"></span> Cork, Ireland</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Electronic Music Council. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="assets/js/audio-wave.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/particles-background.js"></script>
+</body>
+</html>

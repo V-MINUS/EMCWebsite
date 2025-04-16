@@ -1,0 +1,329 @@
+/*
+ * Electronic Music Council - Artists Page Styles
+ * Styles for the artist profiles, social media links, and mixes section
+ */
+
+/* Artists Intro Section */
+.artists-intro {
+    padding: var(--space-xl) 0;
+    text-align: center;
+}
+
+.artists-intro p {
+    max-width: 800px;
+    margin: 0 auto;
+    color: var(--color-text-muted);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Featured Artists Section */
+.featured-artists {
+    padding: var(--space-xl) 0;
+    background-color: var(--color-background-alt);
+}
+
+.artist-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+    margin-top: var(--space-lg);
+}
+
+@media (min-width: 992px) {
+    .artist-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.artist-card {
+    display: flex;
+    flex-direction: column;
+    background: rgba(22, 22, 31, 0.7);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.artist-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+@media (min-width: 768px) {
+    .artist-card {
+        flex-direction: row;
+    }
+}
+
+.artist-image {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+@media (min-width: 768px) {
+    .artist-image {
+        width: 40%;
+    }
+}
+
+.artist-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.artist-card:hover .artist-image img {
+    transform: scale(1.05);
+}
+
+.artist-content {
+    padding: var(--space-lg);
+    flex: 1;
+}
+
+.artist-name {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.artist-title {
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-md);
+    font-weight: 500;
+}
+
+.artist-bio {
+    margin-bottom: var(--space-md);
+}
+
+.artist-bio p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.artist-social {
+    display: flex;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-md);
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    color: var(--color-text);
+    font-size: 1.2rem;
+}
+
+.social-icon:hover {
+    transform: translateY(-3px);
+    background: var(--color-primary);
+    color: white;
+}
+
+.social-icon i {
+    transition: transform 0.3s ease;
+}
+
+.social-icon:hover i {
+    transform: scale(1.2);
+}
+
+/* Social Media Icons Specific Colors */
+.fa-soundcloud:hover {
+    color: #ff7700;
+}
+
+.fa-mixcloud:hover {
+    color: #52aad8;
+}
+
+.fa-youtube:hover {
+    color: #ff0000;
+}
+
+.fa-instagram:hover {
+    color: #c13584;
+}
+
+.fa-facebook:hover {
+    color: #3b5998;
+}
+
+/* Featured Mixes Section */
+.featured-mixes {
+    padding: var(--space-xl) 0;
+}
+
+.mixes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: var(--space-md);
+    margin-top: var(--space-lg);
+}
+
+.mix-card {
+    background: rgba(22, 22, 31, 0.7);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mix-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.mix-image {
+    position: relative;
+    height: 180px;
+    overflow: hidden;
+}
+
+.mix-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.mix-card:hover .mix-image img {
+    transform: scale(1.05);
+}
+
+.mix-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.mix-card:hover .mix-overlay {
+    opacity: 1;
+}
+
+.play-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    color: white;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.play-button:hover {
+    background: var(--color-primary);
+    transform: scale(1.1);
+}
+
+.mix-content {
+    padding: var(--space-md);
+}
+
+.mix-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.mix-artist,
+.mix-date {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+}
+
+.mix-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: var(--space-sm);
+}
+
+.tag {
+    font-size: 0.7rem;
+    padding: 0.25rem 0.5rem;
+    background: rgba(110, 18, 232, 0.2);
+    color: var(--color-text-muted);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.tag:hover {
+    background: var(--color-primary);
+    color: white;
+}
+
+.center-btn {
+    margin-top: var(--space-lg);
+    text-align: center;
+}
+
+/* Join Artists CTA */
+.join-artists {
+    padding: var(--space-xl) 0;
+    background: linear-gradient(135deg, rgba(110, 18, 232, 0.1), rgba(33, 221, 184, 0.1));
+    text-align: center;
+}
+
+.join-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.join-content h2 {
+    margin-bottom: var(--space-sm);
+}
+
+.join-content p {
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-md);
+    font-size: 1.1rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767px) {
+    .artist-content {
+        padding: var(--space-md);
+    }
+    
+    .artist-name {
+        font-size: 1.5rem;
+    }
+    
+    .artist-title {
+        font-size: 1rem;
+    }
+    
+    .social-icon {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+}

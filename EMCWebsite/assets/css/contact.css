@@ -1,0 +1,277 @@
+/* 
+  Electronic Music Council - Contact Page Stylesheet
+  Styling for the contact form and related elements
+*/
+
+.contact-form-section {
+  padding: var(--space-xl) 0;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+}
+
+.contact-info {
+  padding-right: var(--space-md);
+}
+
+.contact-info p {
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-md);
+  font-size: 1.1rem;
+}
+
+.contact-methods {
+  margin: var(--space-lg) 0;
+}
+
+.contact-method {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: var(--space-md);
+}
+
+.method-icon {
+  width: 50px;
+  height: 50px;
+  min-width: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-primary), rgba(110, 18, 232, 0.7));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: var(--space-md);
+  font-size: 1.5rem;
+  color: var(--color-text);
+}
+
+.method-details h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.25rem;
+}
+
+.method-details p {
+  margin-bottom: 0;
+  color: var(--color-text-muted);
+}
+
+.social-connect h3 {
+  margin-bottom: var(--space-sm);
+}
+
+.social-connect .social-icons {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.social-connect .social-icons a {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-standard);
+}
+
+.social-connect .social-icons a:hover {
+  background-color: var(--color-primary);
+  transform: translateY(-3px);
+}
+
+/* Contact Form */
+.contact-form-container {
+  background-color: var(--color-background-alt);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+}
+
+.contact-form {
+  padding: var(--space-md);
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: var(--space-md);
+}
+
+.form-header h3 {
+  font-size: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: var(--space-md);
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  background-color: rgba(14, 14, 20, 0.5);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  transition: var(--transition-standard);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(110, 18, 232, 0.2);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(156, 160, 176, 0.6);
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: auto;
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+.checkbox-group label {
+  margin-bottom: 0;
+  cursor: pointer;
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+}
+
+/* Map Section */
+.map-section {
+  padding: var(--space-xl) 0;
+  background-color: var(--color-background-alt);
+}
+
+.map-container {
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  margin-top: var(--space-md);
+  border: 1px solid var(--color-border);
+}
+
+/* FAQ Section */
+.faq-section {
+  padding: var(--space-xl) 0;
+}
+
+.accordion {
+  margin-top: var(--space-md);
+}
+
+.accordion-item {
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  margin-bottom: var(--space-sm);
+  overflow: hidden;
+  background-color: var(--color-background-alt);
+}
+
+.accordion-header {
+  padding: var(--space-md);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: var(--transition-standard);
+}
+
+.accordion-header h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0;
+  font-weight: 500;
+}
+
+.accordion-icon {
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.accordion-content {
+  padding: 0 var(--space-md) var(--space-md);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.accordion-content p {
+  margin-top: 0;
+  color: var(--color-text-muted);
+}
+
+.accordion-item.active .accordion-header {
+  background-color: rgba(110, 18, 232, 0.1);
+}
+
+.accordion-item.active .accordion-icon {
+  transform: rotate(45deg);
+}
+
+.accordion-item.active .accordion-content {
+  max-height: 200px;
+}
+
+/* Form Success Message */
+.form-success {
+  display: none;
+  text-align: center;
+  padding: var(--space-lg);
+  background-color: rgba(33, 221, 184, 0.1);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--color-secondary);
+}
+
+.form-success h3 {
+  color: var(--color-secondary);
+  margin-bottom: var(--space-sm);
+}
+
+/* Media Queries */
+@media (max-width: 992px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+  
+  .contact-info {
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .contact-method {
+    flex-direction: column;
+  }
+  
+  .method-icon {
+    margin-bottom: var(--space-sm);
+  }
+  
+  .accordion-header h3 {
+    font-size: 1rem;
+  }
+}
