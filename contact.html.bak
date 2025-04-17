@@ -151,8 +151,6 @@
                             <button type="submit" class="btn btn-primary">Send Message</button>
                         </div>
                     </form>
-    <div id="contact-status" style="margin-top:10px;"></div>
-
                 </div>
             </div>
         </div>
@@ -287,36 +285,3 @@
     <script src="assets/js/particles-background.js"></script>
 </body>
 </html>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const form = document.getElementById('contactForm');
-  const statusDiv = document.getElementById('contact-status');
-  if(form) {
-    form.addEventListener('submit', async function(e) {
-      e.preventDefault();
-      statusDiv.textContent = '';
-      const formData = new FormData(form);
-      const data = Object.fromEntries(formData.entries());
-      try {
-        const res = await fetch('http://localhost:5000/api/contact', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(data)
-        });
-        const result = await res.json();
-        if(result.success) {
-          statusDiv.style.color = 'green';
-          statusDiv.textContent = 'Message sent!';
-          form.reset();
-        } else {
-          statusDiv.style.color = 'red';
-          statusDiv.textContent = result.error || 'Error sending message.';
-        }
-      } catch (err) {
-        statusDiv.style.color = 'red';
-        statusDiv.textContent = 'Network error. Try again later.';
-      }
-    });
-  }
-});
-</script>
