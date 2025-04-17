@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News | Electronic Music Council</title>
+    <meta name="description" content="Latest news from Electronic Music Council and the electronic music world.">
+    
+    <!-- Fonts -->
+    
+    
+    
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/news-carousel.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="site-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <h1>EMC</h1>
+                </a>
+            </div>
+            <nav>
+                <div class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="news.html" class="active">News</a></li>
+                    <li><a href="artists.html">Artists</a></li>
+                    <li><a href="merch.html">Merch</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Latest News</h1>
+            <div class="breadcrumbs">
+                <a href="index.html">Home</a> / <span>News</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Electronic Music News API Carousel -->
+    <section class="news-carousel-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Electronic Music News</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="news-carousel-container">
+                <div class="carousel-navigation">
+                    <button id="prevButton" class="carousel-btn"><span class="arrow-left">←</span></button>
+                    <button id="nextButton" class="carousel-btn"><span class="arrow-right">→</span></button>
+                </div>
+                <div class="news-carousel">
+                    <div id="newsCarousel" class="carousel-items"></div>
+                </div>
+                <div class="carousel-indicators" id="carouselIndicators"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EMC News -->
+    <section class="emc-news">
+        <div class="container">
+            <div class="section-header">
+                <h2>EMC Updates</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="news-grid">
+                <article class="news-card">
+                    <div class="news-image">
+                        <img src="assets/images/news-placeholder.jpg" alt="News">
+                    </div>
+                    <div class="news-content">
+                        <span class="news-date">April 2, 2025</span>
+                        <h3>Cork-based digital artist showcases 'Techno People of Cork'</h3>
+                        <p>A digital exploration of Cork's underground techno culture featuring portraits of local scene pioneers.</p>
+                        <a href="#" class="text-link">Read More <span class="arrow">→</span></a>
+                    </div>
+                </article>
+                <article class="news-card">
+                    <div class="news-image">
+                        <img src="assets/images/news-placeholder.jpg" alt="News">
+                    </div>
+                    <div class="news-content">
+                        <span class="news-date">March 15, 2025</span>
+                        <h3>CICADA SELECTS residents forge new ground through inter-city collaboration</h3>
+                        <p>Cork's electronic music collective expands its reach through collaborative projects with Dublin and Galway artists.</p>
+                        <a href="#" class="text-link">Read More <span class="arrow">→</span></a>
+                    </div>
+                </article>
+                <article class="news-card">
+                    <div class="news-image">
+                        <img src="assets/images/news-placeholder.jpg" alt="News">
+                    </div>
+                    <div class="news-content">
+                        <span class="news-date">March 1, 2025</span>
+                        <h3>THE START OF A NEW ERA – 2025 BRINGS OPTIMISM FROM CORK'S ELECTRONIC MUSIC COUNCIL</h3>
+                        <p>EMC outlines ambitious plans for the year ahead, including new venue partnerships and educational initiatives.</p>
+                        <a href="#" class="text-link">Read More <span class="arrow">→</span></a>
+                    </div>
+                </article>
+                <article class="news-card">
+                    <div class="news-image">
+                        <img src="assets/images/news-placeholder.jpg" alt="News">
+                    </div>
+                    <div class="news-content">
+                        <span class="news-date">February 20, 2025</span>
+                        <h3>House For The Homeless: A charity fundraiser for Cork Simon Community</h3>
+                        <p>EMC partners with local venues to raise funds for homelessness charity through a series of special events.</p>
+                        <a href="#" class="text-link">Read More <span class="arrow">→</span></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Stay Updated</h2>
+                <p>Subscribe to our newsletter for the latest news, events, and updates from EMC.</p>
+                <form class="newsletter-form">
+                    <div class="form-group">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">EMC</div>
+                    <p>A community working to generate and maintain a positive, sustainable electronic music economy in Cork.</p>
+                    <div class="social-icons">
+                        <a href="#" target="_blank"><span class="icon-facebook"></span></a>
+                        <a href="#" target="_blank"><span class="icon-instagram"></span></a>
+                        <a href="#" target="_blank"><span class="icon-twitter"></span></a>
+                        <a href="#" target="_blank"><span class="icon-soundcloud"></span></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="artists.html">Artists</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Upcoming Events</h3>
+                    <ul class="footer-events">
+                        <li>
+                            <span class="event-date">APR 15</span>
+                            <a href="#">Small Crab at Liquid Lounge</a>
+                        </li>
+                        <li>
+                            <span class="event-date">APR 22</span>
+                            <a href="#">Collie at Liquid Lounge</a>
+                        </li>
+                        <li>
+                            <span class="event-date">APR 29</span>
+                            <a href="#">Bushbaby at Cyprus Avenue</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <ul class="contact-info">
+                        <li><span class="icon-envelope"></span> info@electronicmusiccouncil.com</li>
+                        <li><span class="icon-map-marker"></span> Cork, Ireland</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Electronic Music Council. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/news-api.js"></script>
+    <script src="assets/js/particles-background.js"></script>
+</body>
+</html>

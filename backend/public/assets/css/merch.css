@@ -1,0 +1,251 @@
+/* Merchandise Page Styles */
+
+.merch-section {
+    padding: 80px 0;
+}
+
+.merch-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.merch-item {
+    background-color: #121212;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.merch-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.merch-image {
+    height: 280px;
+    overflow: hidden;
+    background-color: #1c1c1c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.merch-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.merch-item:hover .merch-image img {
+    transform: scale(1.05);
+}
+
+.merch-details {
+    padding: 20px;
+}
+
+.merch-details h3 {
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+    color: #fff;
+}
+
+.merch-price {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #5d9fff;
+    margin-bottom: 12px;
+}
+
+.merch-description {
+    color: #b3b3b3;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.merch-options {
+    margin-bottom: 20px;
+}
+
+.size-selector {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.size-selector label {
+    margin-right: 10px;
+    color: #ddd;
+}
+
+.size-selector select {
+    background-color: #2a2a2a;
+    border: 1px solid #444;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+/* Checkout page styles */
+.checkout-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.checkout-summary {
+    background-color: #121212;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+.checkout-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.checkout-item-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-right: 20px;
+}
+
+.checkout-item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.checkout-item-details {
+    flex: 1;
+}
+
+.checkout-item-price {
+    font-weight: bold;
+    color: #5d9fff;
+}
+
+.checkout-total {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 15px;
+    border-top: 1px solid #333;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.checkout-form {
+    background-color: #121212;
+    border-radius: 8px;
+    padding: 25px;
+}
+
+.checkout-form h3 {
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #ddd;
+}
+
+.form-group input, 
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 4px;
+    background-color: #2a2a2a;
+    border: 1px solid #444;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+.payment-logos {
+    display: flex;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.payment-logos img {
+    height: 24px;
+    opacity: 0.7;
+}
+
+.secure-badge {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #69b36d;
+    margin-top: 15px;
+}
+
+.secure-badge svg {
+    margin-right: 6px;
+}
+
+.checkout-button {
+    margin-top: 25px;
+    width: 100%;
+    padding: 16px;
+    font-size: 1.1rem;
+    background: linear-gradient(135deg, #5d9fff 0%, #8a40ff 100%);
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.checkout-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(93, 159, 255, 0.3);
+}
+
+@media (max-width: 768px) {
+    .merch-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 25px;
+    }
+    
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .checkout-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .checkout-item-image {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}

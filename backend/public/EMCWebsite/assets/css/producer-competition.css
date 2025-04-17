@@ -1,0 +1,314 @@
+/* 
+  Electronic Music Council - Producer Competition Stylesheet
+  Matching the EMC website aesthetic with competition-specific styling
+*/
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  margin-bottom: var(--space-xl);
+  background-color: rgba(14, 14, 20, 0.7);
+}
+
+.hero-content {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  padding: var(--space-xl) 0;
+}
+
+.page-title {
+  font-size: 4rem;
+  margin-bottom: var(--space-md);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  color: var(--color-text-muted);
+  max-width: 700px;
+  margin: 0 auto var(--space-lg);
+  line-height: 1.6;
+}
+
+.hero-actions {
+  display: flex;
+  gap: var(--space-md);
+  justify-content: center;
+}
+
+.background-animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0.6;
+}
+
+/* Process Grid */
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-lg);
+  margin-top: var(--space-lg);
+}
+
+.process-card {
+  background-color: var(--color-background-alt);
+  border-radius: var(--border-radius);
+  padding: var(--space-lg);
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: var(--transition-standard);
+  border: 1px solid var(--color-border);
+}
+
+.process-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  border-color: var(--color-primary);
+}
+
+.process-icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--space-md);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+}
+
+.number {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--color-text);
+}
+
+.process-card h3 {
+  margin-bottom: var(--space-sm);
+  font-size: 1.5rem;
+}
+
+/* Features Section */
+.features-section {
+  background-color: var(--color-background-alt);
+  padding: var(--space-xl) 0;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+
+.feature-card {
+  padding: var(--space-md);
+  background-color: var(--color-background);
+  border-radius: var(--border-radius);
+  border-left: 3px solid var(--color-primary);
+  transition: var(--transition-standard);
+}
+
+.feature-card:hover {
+  transform: translateX(5px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card h3 {
+  margin-bottom: var(--space-xs);
+  font-size: 1.2rem;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Competitions */
+.competitions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+
+.competition-card {
+  background-color: var(--color-background-alt);
+  border-radius: var(--border-radius);
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition-standard);
+  border: 1px solid var(--color-border);
+}
+
+.competition-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-color: var(--color-primary);
+}
+
+.competition-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--space-sm);
+}
+
+.competition-header h3 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.date {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  background-color: rgba(110, 18, 232, 0.1);
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.competition-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-border);
+}
+
+.hashtag {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.entries {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+.section-action {
+  text-align: center;
+  margin-top: var(--space-lg);
+}
+
+/* CTA Section */
+.cta-section {
+  background: linear-gradient(135deg, rgba(110, 18, 232, 0.1), rgba(33, 221, 184, 0.1));
+  padding: var(--space-xl) 0;
+  text-align: center;
+  margin-top: var(--space-xl);
+}
+
+.cta-content h2 {
+  font-size: 3rem;
+  margin-bottom: var(--space-md);
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.cta-content p {
+  font-size: 1.3rem;
+  color: var(--color-text-muted);
+  max-width: 700px;
+  margin: 0 auto var(--space-lg);
+}
+
+/* Button Styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 30px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-primary-hover));
+  color: var(--color-text);
+  border: none;
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: var(--transition-standard);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-secondary), var(--color-primary));
+  opacity: 0;
+  z-index: -1;
+  transition: var(--transition-standard);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover::after {
+  opacity: 1;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 2px solid var(--color-primary);
+}
+
+.btn-secondary:hover {
+  border-color: var(--color-secondary);
+}
+
+.btn-accent {
+  background: linear-gradient(90deg, var(--color-accent), var(--color-primary));
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 3rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .hero-actions {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+  
+  .process-grid,
+  .features-grid,
+  .competitions-grid {
+    grid-template-columns: 1fr;
+  }
+}
