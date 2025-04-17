@@ -7,6 +7,10 @@ const artistRoutes = require("./routes/artists");
 const eventRoutes = require("./routes/events");
 
 const app = express();
+// Add startup logging
+const logger = require('./logger');
+logger.info(`Server starting in ${process.env.NODE_ENV || 'development'} mode`);
+
 app.use((req, res, next) => {
 app.use(express.static(path.join(__dirname, "public")));
 app.use((req, res, next) => {
@@ -61,7 +65,19 @@ process.on('unhandledRejection', (reason, promise) => {
   console.error(`[${new Date().toISOString()}] UNHANDLED REJECTION:`, reason);
 });
 
-app.listen(PORT, () => {
+
+// Monitor memory usage
+setInterval(() => {
+  const memoryUsage = process.memoryUsage();
+  logger.info(`Memory usage: ${Math.round(memoryUsage.rss / 1024 / 1024)}MB`);
+  
+  // If memory usage exceeds threshold (e.g., 500MB), log warning
+  if (memoryUsage.rss > 500 * 1024 * 1024) {
+    logger.warn('High memory usage detected');
+  }
+}, 60000); // Log every minute
+\napp.listen(PORT, () => {
   console.log(`EMC backend running on port ${PORT}`);
 });
+
 

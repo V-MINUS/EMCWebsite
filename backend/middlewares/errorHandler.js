@@ -1,6 +1,7 @@
 /**
  * Error handling middleware for EMC Website backend
  */
+const logger = require('../logger');
 
 // Handle 404 Not Found errors
 const notFound = (req, res, next) => {
@@ -11,8 +12,8 @@ const notFound = (req, res, next) => {
 
 // Handle all other errors
 const globalErrorHandler = (err, req, res, next) => {
-  // Log error details for debugging
-  console.error(`[${new Date().toISOString()}] ERROR:`, err);
+  // Log error details
+  logger.error(`Error processing ${req.method} ${req.originalUrl}`, err);
   
   // Set status code
   const statusCode = err.status || 500;
