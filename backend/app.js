@@ -8,6 +8,7 @@ const eventRoutes = require("./routes/events");
 
 const app = express();
 app.use((req, res, next) => {
+app.use(express.static(path.join(__dirname, "public")));
 app.use((req, res, next) => {
   res.setHeader("Content-Security-Policy", "default-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; script-src 'self';");
   next();
