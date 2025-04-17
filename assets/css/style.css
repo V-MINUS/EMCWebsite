@@ -16,8 +16,8 @@
   --color-border: #2a2a38;
   
   /* Typography */
-  --font-display: 'Audiowide', cursive;
-  --font-body: 'Inter', sans-serif;
+  --font-display: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  --font-body: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
   
   /* Spacing */
   --space-xs: 0.5rem;
