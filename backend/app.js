@@ -1,4 +1,4 @@
-const express = require("express");
+const express = require("express");\r\nconst errorHandler = require('./middlewares/errorHandler');
 const cors = require("cors");
 const path = require("path");
 
@@ -43,6 +43,25 @@ process.on('uncaughtException', (err) => {
   console.error('Uncaught exception:', err);
   // Log but don't exit
 });
+
+// Handle 404 errors - must be after all other routes
+app.use(errorHandler.notFound);
+
+// Global error handler - must be the last middleware
+app.use(errorHandler.globalErrorHandler);
+
+// Handle uncaught exceptions
+process.on('uncaughtException', (err) => {
+  console.error(`[${new Date().toISOString()}] UNCAUGHT EXCEPTION:`, err);
+  // Log but don't exit in production
+});
+
+// Handle unhandled promise rejections
+process.on('unhandledRejection', (reason, promise) => {
+  console.error(`[${new Date().toISOString()}] UNHANDLED REJECTION:`, reason);
+});
+
 app.listen(PORT, () => {
   console.log(`EMC backend running on port ${PORT}`);
 });
+
