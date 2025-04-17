@@ -5,19 +5,20 @@ document.addEventListener('DOMContentLoaded', function() {
     // Create the canvas element and append it to the background container
     const backgroundContainer = document.getElementById('background-animation');
     if (!backgroundContainer) return;
-    
+
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');
-    
-    // Set canvas dimensions
+    backgroundContainer.appendChild(canvas);
+
+    // Set canvas dimensions to match window size
     let width = window.innerWidth;
     let height = window.innerHeight;
     
-    backgroundContainer.appendChild(canvas);
+    // Array to hold the particle objects
+    let particles = [];
     
-    // Animation settings
-    const particleCount = 100;
-    const particles = [];
+    // Number of particles to create (adjust based on screen size)
+    const particleCount = width > 768 ? 100 : 50;
     
     // Animation state
     let hueRotation = 0;
@@ -26,6 +27,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Base colors (will be modified with hue rotation)
     const primaryHue = 275; // Brighter purple
     const secondaryHue = 160; // Brighter teal
+    
+    // Increase overall visibility
+    backgroundContainer.style.opacity = '0.6'; // Increased from 0.3
     
     // Initialize canvas and resize handler
     function initCanvas() {
@@ -48,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Create the particles
     function initParticles() {
-        particles.length = 0;
+        particles = [];
         
         for (let i = 0; i < particleCount; i++) {
             // Create community clusters by having some particles start near each other
@@ -80,11 +84,15 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // Draw particles
+    // Draw each particle
     function drawParticles() {
         ctx.clearRect(0, 0, width, height);
         
-        // First draw connections
+        // Update global animation values
+        hueRotation = (hueRotation + 0.1) % 360; // Slowly rotate hues
+        networkPulse = Math.sin(Date.now() * 0.001) * 0.5 + 0.5; // Pulsing effect (0 to 1)
+        
+        // First draw all connections (underneath particles)
         drawConnections();
         
         // Then draw particles on top
@@ -117,12 +125,12 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Draw connections between particles
     function drawConnections() {
+        // Reset connection counts
+        particles.forEach(p => p.connections = 0);
+        
         // Connection distance varies with screen size and pulse
         const baseDistance = width > 1200 ? 200 : (width > 768 ? 180 : 150);
         const connDistance = baseDistance * (0.8 + networkPulse * 0.4);
-        
-        // Reset connection count for each particle
-        particles.forEach(p => p.connections = 0);
         
         // Draw network connections
         for (let i = 0; i < particles.length; i++) {
@@ -175,82 +183,84 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // Update particle positions and animation state
+    // Update particle positions
     function updateParticles() {
-        // Update global animation state
-        hueRotation = (hueRotation + 0.1) % 360; // Slowly rotate hues
-        networkPulse = (Math.sin(Date.now() * 0.0005) + 1) / 2; // Network pulse between 0 and 1
-        
-        // Add slight attraction between connected particles
-        // This creates more natural clustering
         for (let i = 0; i < particles.length; i++) {
             const p = particles[i];
             
-            // Apply attraction to connected particles
-            for (let j = 0; j < particles.length; j++) {
-                if (i === j) continue;
+            // Slight attraction between neighboring particles
+            if (p.connections > 0) {
+                // Find center of connected particles
+                let centerX = 0;
+                let centerY = 0;
+                let connCount = 0;
                 
-                const p2 = particles[j];
-                const distance = Math.sqrt(
-                    Math.pow(p.x - p2.x, 2) + 
-                    Math.pow(p.y - p2.y, 2)
-                );
-                
-                // Very slight attraction/repulsion forces
-                if (distance < 200 && distance > 10) {
-                    const force = 0.00005;
-                    const attraction = p.connections > 3 ? force : -force * 0.5;
+                for (let j = 0; j < particles.length; j++) {
+                    if (i === j) continue;
                     
-                    const angle = Math.atan2(p2.y - p.y, p2.x - p.x);
-                    p.vx += Math.cos(angle) * attraction;
-                    p.vy += Math.sin(angle) * attraction;
+                    const p2 = particles[j];
+                    const distance = Math.sqrt(
+                        Math.pow(p.x - p2.x, 2) + 
+                        Math.pow(p.y - p2.y, 2)
+                    );
+                    
+                    if (distance < 200) {
+                        centerX += p2.x;
+                        centerY += p2.y;
+                        connCount++;
+                    }
+                }
+                
+                if (connCount > 0) {
+                    centerX /= connCount;
+                    centerY /= connCount;
+                    
+                    // Slight attraction toward center
+                    p.vx += (centerX - p.x) * 0.0001;
+                    p.vy += (centerY - p.y) * 0.0001;
                 }
             }
             
-            // Update position
+            // Movement
             p.x += p.vx;
             p.y += p.vy;
             
-            // Slightly randomize velocity for organic movement
-            p.vx += (Math.random() - 0.5) * 0.02;
-            p.vy += (Math.random() - 0.5) * 0.02;
-            
-            // Dampen velocity to prevent excessive speed
-            p.vx *= 0.99;
-            p.vy *= 0.99;
-            
-            // Contain particles within bounds (with smooth bounce)
+            // Bounce off edges with slight dampening
             if (p.x < 0) {
                 p.x = 0;
-                p.vx *= -0.5;
+                p.vx = -p.vx * 0.9;
             } else if (p.x > width) {
                 p.x = width;
-                p.vx *= -0.5;
+                p.vx = -p.vx * 0.9;
             }
             
             if (p.y < 0) {
                 p.y = 0;
-                p.vy *= -0.5;
+                p.vy = -p.vy * 0.9;
             } else if (p.y > height) {
                 p.y = height;
-                p.vy *= -0.5;
+                p.vy = -p.vy * 0.9;
             }
             
-            // Update pulse phase
-            p.pulsePhase += 0.01;
+            // Small random acceleration to create more organic movement
+            p.vx += (Math.random() - 0.5) * 0.01;
+            p.vy += (Math.random() - 0.5) * 0.01;
+            
+            // Speed limit to prevent particles from moving too fast
+            const speed = Math.sqrt(p.vx * p.vx + p.vy * p.vy);
+            if (speed > 1) {
+                p.vx = (p.vx / speed) * 1;
+                p.vy = (p.vy / speed) * 1;
+            }
         }
     }
     
     // Animation loop
     function animate() {
-        updateParticles();
         drawParticles();
+        updateParticles();
         requestAnimationFrame(animate);
     }
-    
-    // Initialize
-    initCanvas();
-    animate();
     
     // Handle window resize
     window.addEventListener('resize', function() {
@@ -258,4 +268,8 @@ document.addEventListener('DOMContentLoaded', function() {
         height = window.innerHeight;
         initCanvas();
     });
+    
+    // Start the animation
+    initCanvas();
+    animate();
 });
