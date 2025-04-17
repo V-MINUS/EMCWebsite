@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events | Electronic Music Council</title>
+    <meta name="description" content="Upcoming electronic music events organized by the Electronic Music Council in Cork.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/events.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="site-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <h1>EMC</h1>
+                </a>
+            </div>
+            <nav>
+                <div class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="events.html" class="active">Events</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="artists.html">Artists</a></li>
+                    <li><a href="merch.html">Merch</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Events</h1>
+            <div class="breadcrumbs">
+                <a href="index.html">Home</a> / <span>Events</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Calendar -->
+    <section class="calendar-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Upcoming Events</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="calendar-view-options">
+                <button class="view-option active" data-view="calendar">Calendar View</button>
+                <button class="view-option" data-view="list">List View</button>
+            </div>
+            <div class="calendar-container">
+                <!-- Google Calendar Embed -->
+                <iframe src="https://calendar.google.com/calendar/embed?src=YOUR_CALENDAR_ID&ctz=Europe%2FDublin&mode=MONTH&showNav=1&showDate=1&showPrint=0&showTabs=1&showCalendars=0&showTz=1" style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+                
+                <div class="calendar-instructions">
+                    <p>Click on any event in the calendar to view details and add it to your own calendar.</p>
+                    <a href="https://calendar.google.com/calendar/u/0/r?cid=YOUR_CALENDAR_ID" target="_blank" class="btn btn-secondary">Add Our Calendar to Your Google Calendar</a>
+                </div>
+            </div>
+            
+            <!-- Event List View (initially hidden) -->
+            <div class="events-list-container" style="display: none;">
+                <div id="events-list" class="events-list">
+                    <!-- Events will be loaded here -->
+                    <div class="events-loading">
+                        <div class="spinner"></div>
+                        <p>Loading events...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Events -->
+    <section class="featured-events">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured Events</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="featured-events-grid">
+                <div class="featured-event-card">
+                    <div class="event-image">
+                        <img src="assets/images/event-placeholder.jpg" alt="EMC Presents: Small Crab at Liquid Lounge">
+                        <div class="event-date">
+                            <span class="day">15</span>
+                            <span class="month">APR</span>
+                        </div>
+                    </div>
+                    <div class="event-details">
+                        <h3>EMC Presents: Small Crab at Liquid Lounge</h3>
+                        <div class="event-meta">
+                            <span class="location"><i class="icon-location"></i> Liquid Lounge, Cork</span>
+                            <span class="time"><i class="icon-time"></i> 10:00 PM - 2:00 AM</span>
+                        </div>
+                        <p>Join us for an unforgettable night featuring Small Crab, delivering cutting-edge electronic sounds in an intimate venue setting.</p>
+                        <div class="event-actions">
+                            <a href="#" class="btn btn-primary">Get Tickets</a>
+                            <a href="#" class="btn btn-secondary">Add to Calendar</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="featured-event-card">
+                    <div class="event-image">
+                        <img src="assets/images/event-placeholder.jpg" alt="EMC Presents: Collie at Liquid Lounge">
+                        <div class="event-date">
+                            <span class="day">22</span>
+                            <span class="month">APR</span>
+                        </div>
+                    </div>
+                    <div class="event-details">
+                        <h3>EMC Presents: Collie at Liquid Lounge</h3>
+                        <div class="event-meta">
+                            <span class="location"><i class="icon-location"></i> Liquid Lounge, Cork</span>
+                            <span class="time"><i class="icon-time"></i> 10:00 PM - 2:00 AM</span>
+                        </div>
+                        <p>Experience the distinctive sounds of Collie as they take over Liquid Lounge for a night of deep house and techno.</p>
+                        <div class="event-actions">
+                            <a href="#" class="btn btn-primary">Get Tickets</a>
+                            <a href="#" class="btn btn-secondary">Add to Calendar</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="featured-event-card">
+                    <div class="event-image">
+                        <img src="assets/images/event-placeholder.jpg" alt="EMC Presents: Illicit x Outlaw'd – Bushbaby at Cyprus Avenue">
+                        <div class="event-date">
+                            <span class="day">29</span>
+                            <span class="month">APR</span>
+                        </div>
+                    </div>
+                    <div class="event-details">
+                        <h3>Illicit x Outlaw'd – Bushbaby at Cyprus Avenue</h3>
+                        <div class="event-meta">
+                            <span class="location"><i class="icon-location"></i> Cyprus Avenue, Cork</span>
+                            <span class="time"><i class="icon-time"></i> 11:00 PM - 3:00 AM</span>
+                        </div>
+                        <p>A collaborative event bringing Bushbaby to Cyprus Avenue for a high-energy night of electronic music excellence.</p>
+                        <div class="event-actions">
+                            <a href="#" class="btn btn-primary">Get Tickets</a>
+                            <a href="#" class="btn btn-secondary">Add to Calendar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Past Events -->
+    <section class="past-events">
+        <div class="container">
+            <div class="section-header">
+                <h2>Past Events</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="past-events-grid">
+                <div class="past-event-card">
+                    <div class="past-event-image">
+                        <img src="assets/images/event-placeholder.jpg" alt="EMC Presents: NYE W/ SHAMPAIN">
+                    </div>
+                    <div class="past-event-content">
+                        <span class="past-event-date">December 31, 2024</span>
+                        <h3>EMC Presents: NYE W/ SHAMPAIN</h3>
+                        <p>Celebrated the new year with SHAMPAIN delivering an unforgettable night of music.</p>
+                        <a href="#" class="text-link">View Gallery <span class="arrow">→</span></a>
+                    </div>
+                </div>
+                
+                <div class="past-event-card">
+                    <div class="past-event-image">
+                        <img src="assets/images/event-placeholder.jpg" alt="Soichi Terada">
+                    </div>
+                    <div class="past-event-content">
+                        <span class="past-event-date">October 25, 2024</span>
+                        <h3>EMC Presents: Soichi Terada</h3>
+                        <p>Legendary Japanese producer Soichi Terada brought his unique sounds to Cork.</p>
+                        <a href="#" class="text-link">View Gallery <span class="arrow">→</span></a>
+                    </div>
+                </div>
+                
+                <div class="past-event-card">
+                    <div class="past-event-image">
+                        <img src="assets/images/event-placeholder.jpg" alt="Culture Night 2024: Cruthú cois farraige">
+                    </div>
+                    <div class="past-event-content">
+                        <span class="past-event-date">September 20, 2024</span>
+                        <h3>Culture Night 2024: Cruthú cois farraige</h3>
+                        <p>A flagship late-night event for Culture Night 2024 in Cobh, Cork.</p>
+                        <a href="#" class="text-link">View Gallery <span class="arrow">→</span></a>
+                    </div>
+                </div>
+                
+                <div class="past-event-card">
+                    <div class="past-event-image">
+                        <img src="assets/images/event-placeholder.jpg" alt="Trance Wax in Cyprus Avenue">
+                    </div>
+                    <div class="past-event-content">
+                        <span class="past-event-date">September 27, 2024</span>
+                        <h3>Trance Wax in Cyprus Avenue</h3>
+                        <p>Northern Irish alias made a blinding return to Cyprus Avenue.</p>
+                        <a href="#" class="text-link">View Gallery <span class="arrow">→</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="center-btn">
+                <a href="#" class="btn btn-secondary">View All Past Events</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- DJ Competitions Section -->
+    <section class="dj-competitions">
+        <div class="container">
+            <!-- Competition cards will be injected here by JavaScript -->
+        </div>
+    </section>
+
+    <!-- Submit Event -->
+    <section class="submit-event">
+        <div class="container">
+            <div class="submit-event-content">
+                <h2>Hosting an Electronic Music Event?</h2>
+                <p>Partner with EMC to reach a wider audience and become part of Cork's thriving electronic music community.</p>
+                <a href="contact.html" class="btn btn-primary">Submit Your Event</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">EMC</div>
+                    <p>A community working to generate and maintain a positive, sustainable electronic music economy in Cork.</p>
+                    <div class="social-icons">
+                        <a href="#" target="_blank"><span class="icon-facebook"></span></a>
+                        <a href="#" target="_blank"><span class="icon-instagram"></span></a>
+                        <a href="#" target="_blank"><span class="icon-twitter"></span></a>
+                        <a href="#" target="_blank"><span class="icon-soundcloud"></span></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="artists.html">Artists</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Upcoming Events</h3>
+                    <ul class="footer-events">
+                        <li>
+                            <span class="event-date">APR 15</span>
+                            <a href="#">Small Crab at Liquid Lounge</a>
+                        </li>
+                        <li>
+                            <span class="event-date">APR 22</span>
+                            <a href="#">Collie at Liquid Lounge</a>
+                        </li>
+                        <li>
+                            <span class="event-date">APR 29</span>
+                            <a href="#">Bushbaby at Cyprus Avenue</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <ul class="contact-info">
+                        <li><span class="icon-envelope"></span> info@electronicmusiccouncil.com</li>
+                        <li><span class="icon-map-marker"></span> Cork, Ireland</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Electronic Music Council. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/gcal-events.js"></script>
+    <script src="assets/js/particles-background.js"></script>
+</body>
+</html>
