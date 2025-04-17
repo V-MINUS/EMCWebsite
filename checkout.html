@@ -42,6 +42,7 @@
                     <li><a href="merch.html">Merch</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
+                    <li><a href="emc-beat-battle.html">EMC Beat Battle</a></li>
             </nav>
         </div>
     </header>
@@ -127,9 +128,9 @@
                         <label for="card-number">Card Number</label>
                         <input type="text" id="card-number" name="card-number" placeholder="XXXX XXXX XXXX XXXX" required>
                         <div class="payment-logos">
-                            <img src="assets/images/payment/visa.png" alt="Visa">
-                            <img src="assets/images/payment/mastercard.png" alt="Mastercard">
-                            <img src="assets/images/payment/amex.png" alt="American Express">
+                            <img loading="lazy" src="assets/images/payment/visa.png" alt="Visa">
+                            <img loading="lazy" src="assets/images/payment/mastercard.png" alt="Mastercard">
+                            <img loading="lazy" src="assets/images/payment/amex.png" alt="American Express">
                         </div>
                     </div>
                     
@@ -250,7 +251,7 @@
                     const itemHTML = `
                         <div class="checkout-item">
                             <div class="checkout-item-image">
-                                <img src="${product.image}" alt="${product.name}">
+                                <img loading="lazy" src="${product.image}" alt="${product.name}">
                             </div>
                             <div class="checkout-item-details">
                                 <h3>${product.name}</h3>

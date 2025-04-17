@@ -1,4 +1,4 @@
-const express = require("express");\r\nconst errorHandler = require('./middlewares/errorHandler');
+const express = require("express");\r\nconst compression = require('compression');\r\nconst errorHandler = require('./middlewares/errorHandler');
 const cors = require("cors");
 const path = require("path");
 
@@ -27,7 +27,7 @@ app.use((req, res, next) => {
 });
 const PORT = process.env.PORT || 5000;
 
-app.use(cors());
+app.use(cors());\r\napp.use(compression());
 app.use(express.json());
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
@@ -79,5 +79,6 @@ setInterval(() => {
 \napp.listen(PORT, () => {
   console.log(`EMC backend running on port ${PORT}`);
 });
+
 
 

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Sitemap: [https://emcwebsite.onrender.com/sitemap.xml](https://emcwebsite.onrender.com/sitemap.xml)
